@@ -12,7 +12,7 @@ class View {
         class instance
         */ 
         this.$domEl.on('click', 'ul', this.clickTowerHandler.bind(this))
-        this.clickedTowerNum = null;
+        this.selectedFromTowerId = null;
 
         this.setupTowers()
         this.render()
