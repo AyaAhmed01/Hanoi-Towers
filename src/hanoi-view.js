@@ -95,15 +95,17 @@ View.prototype.move = function (event, toTowerId) {
 View.prototype.clickTowerHandler = function (event) {
     let toTowerId = $(event.currentTarget).index();
 
-    if (this.selectedFromTowerId) { // second click
+    if (this.selectedFromTowerId !== null) { // second click
         this.move(event, toTowerId)
+        console.log("second click")
+        console.log("After second click", this.selectedFromTowerId)
     } else {  // first click .. select tower to move from
         this.selectedFromTowerId = toTowerId
+        console.log("first click")
+        console.log("selected Id", toTowerId)
     }
 
     this.render()
-
-
 }
 
 module.exports = View;
